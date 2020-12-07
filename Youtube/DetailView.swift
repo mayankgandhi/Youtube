@@ -1,14 +1,13 @@
 //
-//  FeedCell.swift
+//  DetailView.swift
 //  Youtube
 //
-//  Created by Mayank Gandhi on 12/6/20.
+//  Created by Mayank Gandhi on 12/7/20.
 //
 
 import UIKit
-import SnapKit
 
-class FeedCell: UITableViewCell {
+class DetailView: UIView {
     
     static let reuseId = "FeedCell"
     
@@ -16,11 +15,10 @@ class FeedCell: UITableViewCell {
     let channelTitleLabel = UILabel(frame: .zero)
     let viewsLabel = UILabel(frame: .zero)
     let timeStampLabel = UILabel(frame: .zero)
-
     let feedImageView = UIImageView(frame: .zero)
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureCell()
     }
     
@@ -39,9 +37,7 @@ class FeedCell: UITableViewCell {
     func createImageView() {
         feedImageView.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    
-    
+
     func configureStackView() {
         let horizontalStackView = UIStackView(frame: .zero)
         horizontalStackView.axis = .horizontal
@@ -60,7 +56,6 @@ class FeedCell: UITableViewCell {
         verticalStackView.addArrangedSubview(titleLabel)
         verticalStackView.addArrangedSubview(horizontalStackView)
         
-        contentView.addSubview(verticalStackView)
         
         feedImageView.snp.makeConstraints { (make) in
             make.height.lessThanOrEqualToSuperview()
@@ -75,9 +70,10 @@ class FeedCell: UITableViewCell {
     
     func configureCell() {
         createLabels()
+        createImageView()
         configureStackView()
     }
-
+    
     func loadView(_ item: FeedItem) {
         feedImageView.load(url: item.imageURL)
         titleLabel.text = item.title
@@ -90,18 +86,3 @@ class FeedCell: UITableViewCell {
         print(titleLabel.text)
     }
 }
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
-

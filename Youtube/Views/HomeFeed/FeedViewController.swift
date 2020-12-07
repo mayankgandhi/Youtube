@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var feedView: UITableView!
     
@@ -20,6 +20,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        feedView.delegate = self
         // Do any additional setup after loading the view.
         configureTableView()
     }

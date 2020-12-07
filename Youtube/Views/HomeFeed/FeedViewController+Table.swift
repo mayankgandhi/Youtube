@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension FeedViewController {
+    
     func configureTableView() {
         feedView.register(FeedCell.self, forCellReuseIdentifier: FeedCell.reuseId)
         dataSource = UITableViewDiffableDataSource<Section, FeedItem>(tableView: feedView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
@@ -23,6 +24,12 @@ extension FeedViewController {
         snapShot.appendSections([.main])
         snapShot.appendItems(FeedItem.data, toSection: .main)
         dataSource.apply(snapShot)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(FeedItem.data[indexPath.row].channelTitle)
+        
     }
 
 }
