@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C116D9D257E067B008A8153 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C116D9C257E067B008A8153 /* SnapKit */; };
+		5C116DA0257E0818008A8153 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C116D9F257E0818008A8153 /* FeedItem.swift */; };
+		5C116DA3257E0DC7008A8153 /* FeedViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C116DA2257E0DC7008A8153 /* FeedViewController+Table.swift */; };
 		5CD1F181257DD2670094DC9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1F180257DD2670094DC9F /* AppDelegate.swift */; };
 		5CD1F183257DD2670094DC9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD1F182257DD2670094DC9F /* SceneDelegate.swift */; };
 		5CD1F188257DD2670094DC9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD1F186257DD2670094DC9F /* Main.storyboard */; };
@@ -21,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C116D9F257E0818008A8153 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		5C116DA2257E0DC7008A8153 /* FeedViewController+Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+Table.swift"; sourceTree = "<group>"; };
 		5CD1F17D257DD2670094DC9F /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD1F180257DD2670094DC9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CD1F182257DD2670094DC9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C116D9D257E067B008A8153 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +74,7 @@
 			children = (
 				5CE7638F257DFFC60055D6C8 /* System */,
 				5CD1F186257DD2670094DC9F /* Main.storyboard */,
+				5C116D9F257E0818008A8153 /* FeedItem.swift */,
 				5CD1F19A257DDEED0094DC9F /* HomeViewController.swift */,
 				5CE7638D257DFFBE0055D6C8 /* Views */,
 				5CD1F189257DD26A0094DC9F /* Assets.xcassets */,
@@ -82,6 +89,7 @@
 			children = (
 				5CE76388257DFFAE0055D6C8 /* FeedCell.swift */,
 				5CE76379257DFEBE0055D6C8 /* FeedViewController.swift */,
+				5C116DA2257E0DC7008A8153 /* FeedViewController+Table.swift */,
 			);
 			path = HomeFeed;
 			sourceTree = "<group>";
@@ -122,6 +130,9 @@
 			dependencies = (
 			);
 			name = Youtube;
+			packageProductDependencies = (
+				5C116D9C257E067B008A8153 /* SnapKit */,
+			);
 			productName = Youtube;
 			productReference = 5CD1F17D257DD2670094DC9F /* Youtube.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +160,9 @@
 				Base,
 			);
 			mainGroup = 5CD1F174257DD2670094DC9F;
+			packageReferences = (
+				5C116D9B257E067B008A8153 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5CD1F17E257DD2670094DC9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,7 +195,9 @@
 				5CD1F183257DD2670094DC9F /* SceneDelegate.swift in Sources */,
 				5CE76380257DFEED0055D6C8 /* ExploreViewController.swift in Sources */,
 				5CE76386257DFF090055D6C8 /* LibraryViewController.swift in Sources */,
+				5C116DA0257E0818008A8153 /* FeedItem.swift in Sources */,
 				5CE76389257DFFAE0055D6C8 /* FeedCell.swift in Sources */,
+				5C116DA3257E0DC7008A8153 /* FeedViewController+Table.swift in Sources */,
 				5CE7637B257DFEBE0055D6C8 /* FeedViewController.swift in Sources */,
 				5CD1F19B257DDEED0094DC9F /* HomeViewController.swift in Sources */,
 			);
@@ -385,6 +401,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C116D9B257E067B008A8153 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C116D9C257E067B008A8153 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C116D9B257E067B008A8153 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CD1F175257DD2670094DC9F /* Project object */;
 }

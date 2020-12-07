@@ -6,18 +6,71 @@
 //
 
 import UIKit
+import SnapKit
 
 class FeedCell: UITableViewCell {
+    
+    static let reuseId = "FeedCell"
+    
+    let titleLabel = UILabel(frame: .zero)
+    let channelTitleLabel = UILabel(frame: .zero)
+    let viewsLabel = UILabel(frame: .zero)
+    let timeStampLabel = UILabel(frame: .zero)
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        configureCell()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func createLabels() {
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        titleLabel.font = titleLabel.font.withSize(20)
+        
+        channelTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        viewsLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeStampLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    
+    func configureStackView() {
+        let horizontalStackView = UIStackView(frame: .zero)
+        horizontalStackView.axis = .horizontal
+        horizontalStackView.spacing = CGFloat(10)
+        
+        horizontalStackView.addArrangedSubview(channelTitleLabel)
+        horizontalStackView.addArrangedSubview(viewsLabel)
+        horizontalStackView.addArrangedSubview(timeStampLabel)
+        
+        let verticalStackView = UIStackView(frame: .zero)
+        verticalStackView.axis = .vertical
+        verticalStackView.spacing = CGFloat(10)
+        verticalStackView.addArrangedSubview(titleLabel)
+        verticalStackView.addArrangedSubview(horizontalStackView)
+        
+        contentView.addSubview(verticalStackView)
+        
+        verticalStackView.snp.makeConstraints { (make) in
+            make.size.equalToSuperview().offset(-10)
+            make.center.equalToSuperview()
+        }
+    }
+    
+    func configureCell() {
+        createLabels()
+        configureStackView()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func loadView(_ item: FeedItem) {
+        titleLabel.text = item.title
+        channelTitleLabel.text = item.channelTitle
+        timeStampLabel.text = "\(item.timeStamp)"
+        viewsLabel.text = "\(item.views) views"
     }
-
 }
+
