@@ -63,12 +63,11 @@ class FeedCell: UITableViewCell {
         contentView.addSubview(verticalStackView)
         
         feedImageView.snp.makeConstraints { (make) in
-            make.height.lessThanOrEqualToSuperview()
+            make.height.equalTo(200)
         }
         
         verticalStackView.snp.makeConstraints { (make) in
             make.size.width.equalToSuperview().offset(-10)
-            make.size.height.equalTo(400)
             make.center.equalToSuperview()
         }
     }

@@ -22,7 +22,6 @@
 		5CE76386257DFF090055D6C8 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE76385257DFF090055D6C8 /* LibraryViewController.swift */; };
 		5CE76389257DFFAE0055D6C8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE76388257DFFAE0055D6C8 /* FeedCell.swift */; };
 		5CE841BE257ECB6100FCBA9C /* FeedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE841BC257ECB6100FCBA9C /* FeedDetailViewController.swift */; };
-		5CE841C6257ECF1700FCBA9C /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE841C5257ECF1700FCBA9C /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		5CE76385257DFF090055D6C8 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		5CE76388257DFFAE0055D6C8 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		5CE841BC257ECB6100FCBA9C /* FeedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDetailViewController.swift; sourceTree = "<group>"; };
-		5CE841C5257ECF1700FCBA9C /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +77,6 @@
 				5CE7638F257DFFC60055D6C8 /* System */,
 				5CD1F186257DD2670094DC9F /* Main.storyboard */,
 				5CE841BC257ECB6100FCBA9C /* FeedDetailViewController.swift */,
-				5CE841C5257ECF1700FCBA9C /* DetailView.swift */,
 				5C116D9F257E0818008A8153 /* FeedItem.swift */,
 				5CD1F19A257DDEED0094DC9F /* HomeViewController.swift */,
 				5CE7638D257DFFBE0055D6C8 /* Views */,
@@ -197,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE76383257DFEFF0055D6C8 /* SubscriptionViewController.swift in Sources */,
-				5CE841C6257ECF1700FCBA9C /* DetailView.swift in Sources */,
 				5CD1F181257DD2670094DC9F /* AppDelegate.swift in Sources */,
 				5CD1F183257DD2670094DC9F /* SceneDelegate.swift in Sources */,
 				5CE76380257DFEED0055D6C8 /* ExploreViewController.swift in Sources */,

@@ -28,8 +28,12 @@ extension FeedViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print(FeedItem.data[indexPath.row].channelTitle)
-        
+        let detailVC = FeedDetailViewController()
+        if let cell = tableView.cellForRow(at: indexPath) as? FeedCell {
+            detailVC.loadView(FeedItem.data[indexPath.row], image: cell.feedImageView.image!)
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+
     }
 
 }

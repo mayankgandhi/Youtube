@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Feed View Controller-->
         <scene sceneID="FGF-8R-6EV">
             <objects>
                 <viewController id="FC8-zC-uIY" customClass="FeedViewController" customModule="Youtube" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UjD-s6-zts">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="186" id="OcY-ri-Fcc" customClass="FeedCell" customModule="Youtube" customModuleProvider="target">
@@ -40,14 +40,14 @@
                             <constraint firstItem="UjD-s6-zts" firstAttribute="leading" secondItem="XEP-Tb-InW" secondAttribute="leading" id="mhs-pX-4VE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="5o6-1L-ace"/>
+                    <navigationItem key="navigationItem" id="lvi-Vx-5Zl"/>
                     <connections>
                         <outlet property="feedView" destination="UjD-s6-zts" id="apo-1M-9br"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHm-h6-BJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628.985507246377" y="-490.17857142857139"/>
+            <point key="canvasLocation" x="2539.130434782609" y="-490.17857142857139"/>
         </scene>
         <!--Explore-->
         <scene sceneID="2Py-h7-7Uy">
@@ -76,7 +76,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FC8-zC-uIY" kind="relationship" relationship="viewControllers" id="KIw-2q-afE"/>
+                        <segue destination="jEQ-Lt-cuY" kind="relationship" relationship="viewControllers" id="KIw-2q-afE"/>
                         <segue destination="fA8-tt-Bhc" kind="relationship" relationship="viewControllers" id="VLl-Hz-xI1"/>
                         <segue destination="JDF-xE-x97" kind="relationship" relationship="viewControllers" id="603-mo-pRC"/>
                         <segue destination="UlG-Ya-l57" kind="relationship" relationship="viewControllers" id="Yle-SU-wDt"/>
@@ -117,6 +117,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ld1-5B-Xz4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="68" y="1012"/>
+        </scene>
+        <!--Feed Detail View Controller-->
+        <scene sceneID="Qpa-ym-OfI">
+            <objects>
+                <viewController id="lLe-hl-sKg" customClass="FeedDetailViewController" customModule="Youtube" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jfO-1F-Gr2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="e4d-UW-IFC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SAj-4i-eOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="-1163"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Knd-FZ-mJR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jEQ-Lt-cuY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="5o6-1L-ace"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kf0-Of-25u">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FC8-zC-uIY" kind="relationship" relationship="rootViewController" id="YeY-MH-Ezk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yFv-nu-CGy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628.985507246377" y="-490.17857142857139"/>
         </scene>
     </scenes>
     <resources>
